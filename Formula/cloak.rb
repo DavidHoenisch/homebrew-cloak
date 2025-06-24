@@ -5,21 +5,21 @@
 class Cloak < Formula
   desc "protect environmental vars from untrusted applications"
   homepage ""
-  version "0.2.0"
+  version "0.2.2"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.0/cloak_0.2.0_darwin_amd64.tar.gz"
-      sha256 "2358df178c69327562cff07a36acee906729f3803cd3744ac4bfbc230c843e3b"
+      url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.2/cloak_0.2.2_darwin_amd64.tar.gz"
+      sha256 "bf0481830d00d15aa4103ce1be7a0c7421eb54d68ea035f86da063016bd35d9e"
 
       def install
         bin.install "cloak"
       end
     end
     on_arm do
-      url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.0/cloak_0.2.0_darwin_arm64.tar.gz"
-      sha256 "755f2871df73b087540570e51de7c9b793ec62f234f65ea85ee2c379badcee02"
+      url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.2/cloak_0.2.2_darwin_arm64.tar.gz"
+      sha256 "3ae010e41aa0d3acbf35429f443cfd9243298ba87ba2f275b94fe606fd8fda8f"
 
       def install
         bin.install "cloak"
@@ -30,8 +30,8 @@ class Cloak < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.0/cloak_0.2.0_linux_amd64.tar.gz"
-        sha256 "2a8492aa09e43b77210b7054eeb89184c3c07eb7fe07f0c1e2b53ef445552a6d"
+        url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.2/cloak_0.2.2_linux_amd64.tar.gz"
+        sha256 "6c6f16900ee6111cade3d6781295608f1e3604ae2c292d4e0a31bb14d1252f55"
 
         def install
           bin.install "cloak"
@@ -40,8 +40,8 @@ class Cloak < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.0/cloak_0.2.0_linux_arm64.tar.gz"
-        sha256 "4cf83b0e0a67655c778137940f4f29fd1c19b06ebd95317d305e78214fd37abe"
+        url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.2/cloak_0.2.2_linux_arm64.tar.gz"
+        sha256 "f6cde8b55773ab0f8766cf97b861437ba5c02bdfc5f4bdf8841a7ef9405bd0cc"
 
         def install
           bin.install "cloak"
