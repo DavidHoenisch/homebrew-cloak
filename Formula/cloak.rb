@@ -5,47 +5,27 @@
 class Cloak < Formula
   desc "protect environmental vars from untrusted applications"
   homepage ""
-  version "0.2.3"
+  version "0.2.6"
   license "MIT"
+  depends_on :linux
 
-  on_macos do
-    on_intel do
-      url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.3/cloak_0.2.3_darwin_amd64.tar.gz"
-      sha256 "31203a82965a9e6cce4f4d4dbace01abdb7844a792f06a700a62f2e2ca6fadfb"
-
-      def install
-        bin.install "cloak"
-      end
-    end
-    on_arm do
-      url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.3/cloak_0.2.3_darwin_arm64.tar.gz"
-      sha256 "08d2c38ffd5a824df29ddd4c58a22f1d40ce346b736072d56b5f254f7475dfa7"
+  on_intel do
+    if Hardware::CPU.is_64_bit?
+      url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.6/cloak_0.2.6_linux_amd64.tar.gz"
+      sha256 "4fa5b12f7aff975b256f547add877c7e99ee2083b3b6cff75d6a99fa15ae7355"
 
       def install
         bin.install "cloak"
       end
     end
   end
+  on_arm do
+    if Hardware::CPU.is_64_bit?
+      url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.6/cloak_0.2.6_linux_arm64.tar.gz"
+      sha256 "98ae50997c8cca7fcad7adb7ec5ebffe661a783f3c7c79042b55fb6165796840"
 
-  on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.3/cloak_0.2.3_linux_amd64.tar.gz"
-        sha256 "bcf6e3de6b364a67984bf178c9c877c44818fb47cc6785e610e4eb9c56a95c90"
-
-        def install
-          bin.install "cloak"
-        end
-      end
-    end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/DavidHoenisch/cloak/releases/download/v0.2.3/cloak_0.2.3_linux_arm64.tar.gz"
-        sha256 "8b505f210da491d80d3d98e202ee79405e9bf3fa0bbffa907fbe7e9e0ec132ad"
-
-        def install
-          bin.install "cloak"
-        end
+      def install
+        bin.install "cloak"
       end
     end
   end
